@@ -1,0 +1,57 @@
+﻿Intro
+
+What is BAD about web forms
+
+1st demo - worst case scenario
+  - Markup is all controls
+  - No master page
+  - no css
+  - no javascript
+  - data source control
+  - grid control
+
+2nd demo - ASP.NET 4.5 - model binding - repository pattern - activate roslyn providers
+  - Markup uses H2, grid uses UseAccessibleHeader
+  - Master Page for branding
+  - no javascript
+  - Model Binding with Repository pattern
+  - Grid Control
+  - Add Microsoft.CodeDom.Providers.DotNetCompilerPlatform
+
+3rd Demo -- Enable Async
+--->>> Async
+
+
+4th demo - Bootstrap - npm, Bower
+  - Bootstrap references introduced to CSS
+  - Markup uses bootstrap classes
+  - Model Binding with Repository Pattern
+  - Grid control is marked up as a Bootstrap table
+  - Reference Bootstrap from npm / bower
+
+5th Demo
+--->>  Turn on HTTP/2 - explain SSL
+
+6th Demo
+  - Roslyn
+
+6th demo - AngularJS - WebMethod - Gulp
+  - AngularUI
+  - Markup uses Angular references
+  - Angular controller and module introduced
+  - data is fetched from web method
+  - Angular is fetched with npm
+  - Our code is compressed and uglified with Gulp
+
+7th demo - AngularJS - WebAPI - Gulp
+  - data is fetched from web api
+
+8th Demo - Open with iOS emulator
+	- Open with Android emulator
+
+
+
+
+
+
+

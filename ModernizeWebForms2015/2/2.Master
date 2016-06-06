@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="2.Master.cs" Inherits="ModernizeWebForms2015._2._2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+  <title></title>
+  <style>
+    html, body {
+      padding: 0px;
+      margin: 0px;
+      overflow: hidden;
+    }
+
+    form, footer {
+      position: absolute;
+      overflow: hidden;
+      width: 100%;
+      left: 0; right: 0;
+    }
+
+    form {
+      top: 0px;
+      bottom: 50px;
+      padding: 5px;
+    }
+
+		td {
+			padding: 3px;
+		}
+
+    h2 {
+      font-weight: bold;
+      text-decoration: underline;
+      font-size: 24pt;
+    }
+
+    footer {
+      background-color: #000;
+      color: #EEE;
+      text-align: center;
+      font-size: small;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      line-height: 50px;
+      height: 50px;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <form id="form1" runat="server">
+    <div>
+
+      <h2><%: Page.Title %></h2>
+
+      <asp:ContentPlaceHolder ID="bodyContent" runat="server">
+      </asp:ContentPlaceHolder>
+    </div>
+
+  </form>
+
+  <footer>
+    &copy;2016 Jeff Fritz Travel Inc.
+  </footer>
+
+
+</body>
+</html>

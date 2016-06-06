@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="6.master.cs" Inherits="ModernizeWebForms2015._6._6" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+  <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+  <link href="style.css" rel="stylesheet" />
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="//ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <form id="form1" runat="server">
+    <div class="container" role="main">
+
+      <div class="jumbotron">
+        <h2><%: Page.Title %></h2>
+      </div>
+
+      <asp:ContentPlaceHolder ID="bodyContent" runat="server">
+      </asp:ContentPlaceHolder>
+
+    </div>
+
+  </form>
+
+  <footer>&copy;2016 Jeff Fritz Travel Inc.</footer>
+
+</body>
+</html>

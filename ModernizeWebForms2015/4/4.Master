@@ -7,10 +7,8 @@
   <title></title>
 
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+	<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="style.css" rel="stylesheet" />  
-  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -30,6 +28,9 @@
   </form>
 
     <footer >&copy;2016 Jeff Fritz Travel Inc.</footer>
+
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 </body>
 </html>

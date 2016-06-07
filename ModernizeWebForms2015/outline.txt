@@ -18,22 +18,27 @@ What is BAD about web forms
   - Grid Control
   - Add Microsoft.CodeDom.Providers.DotNetCompilerPlatform
 
-3rd Demo -- Enable Async
---->>> Async
+
+--->> NEED A ROSLYN IN ASPX DEMO
+
+3rd Demo -- Enable Repository
 
 
-4th demo - Bootstrap - npm, Bower
+4th demo - Dynamic data Bootstrap - npm, Bower
   - Bootstrap references introduced to CSS
   - Markup uses bootstrap classes
   - Model Binding with Repository Pattern
   - Grid control is marked up as a Bootstrap table
   - Reference Bootstrap from npm / bower
 
+BrowserLink
+-->> Update font in header in browser and demonstrate it updating in styles.css
+-->> Update styles.css and demonstrate the page updating
+
 5th Demo
 --->>  Turn on HTTP/2 - explain SSL
 
-6th Demo
-  - Roslyn
+--->>  NEED A GULP SCRIPT
 
 6th demo - AngularJS - WebMethod - Gulp
   - AngularUI
@@ -47,11 +52,6 @@ What is BAD about web forms
   - data is fetched from web api
 
 8th Demo - Open with iOS emulator
-	- Open with Android emulator
-
-
-
-
 
 
 

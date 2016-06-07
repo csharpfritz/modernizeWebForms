@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -50,10 +49,6 @@
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -117,25 +112,21 @@
     <Content Include="2\Default.aspx" />
     <Content Include="4\Default.aspx" />
     <Content Include="4\style.css" />
-    <Content Include="5\Default.aspx" />
-    <Content Include="5\style.css" />
-    <Content Include="6\app.js" />
     <Content Include="6\Default.aspx" />
     <Content Include="6\style.css" />
     <Content Include="7\Default.aspx" />
     <Content Include="7\style.css" />
-    <Content Include="8\Default.aspx" />
-    <Content Include="8\style.css" />
-    <Content Include="App_Data\trips.mdf" />
-    <Content Include="App_Data\trips_log.ldf">
-      <DependentUpon>trips.mdf</DependentUpon>
+    <Content Include="App_Data\Trips.mdf" />
+    <Content Include="App_Data\Trips_log.ldf">
+      <DependentUpon>Trips.mdf</DependentUpon>
     </Content>
+    <Content Include="gulpfile.js" />
     <Content Include="packages.config" />
     <Content Include="2\2.Master" />
     <Content Include="4\4.Master" />
-    <Content Include="5\5.Master" />
+    <Content Include="bower.json" />
+    <Content Include="package.json" />
     <Content Include="6\6.Master" />
-    <Content Include="8\8.Master" />
     <Content Include="7\7.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -195,20 +186,6 @@
     <Compile Include="4\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="5\5.Master.cs">
-      <DependentUpon>5.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="5\5.Master.designer.cs">
-      <DependentUpon>5.Master</DependentUpon>
-    </Compile>
-    <Compile Include="5\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="5\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="6\6.Master.cs">
       <DependentUpon>6.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -216,7 +193,6 @@
     <Compile Include="6\6.Master.designer.cs">
       <DependentUpon>6.Master</DependentUpon>
     </Compile>
-    <Compile Include="6\TripController.cs" />
     <Compile Include="6\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -238,28 +214,14 @@
     <Compile Include="7\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="8\8.Master.cs">
-      <DependentUpon>8.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="8\8.Master.designer.cs">
-      <DependentUpon>8.Master</DependentUpon>
-    </Compile>
-    <Compile Include="8\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="8\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="8\TripController.cs" />
+    <Compile Include="7\TripController.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606051940043_Initialize.cs" />
-    <Compile Include="Migrations\201606051940043_Initialize.Designer.cs">
-      <DependentUpon>201606051940043_Initialize.cs</DependentUpon>
+    <Compile Include="Migrations\201606070536095_Initialize.cs" />
+    <Compile Include="Migrations\201606070536095_Initialize.Designer.cs">
+      <DependentUpon>201606070536095_Initialize.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\TripRepository.cs" />
@@ -267,13 +229,12 @@
     <Compile Include="Models\TripContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201606051940043_Initialize.resx">
-      <DependentUpon>201606051940043_Initialize.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606070536095_Initialize.resx">
+      <DependentUpon>201606070536095_Initialize.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -299,7 +260,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
+      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -307,7 +268,6 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

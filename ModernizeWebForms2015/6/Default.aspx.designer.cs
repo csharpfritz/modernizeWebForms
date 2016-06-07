@@ -10,6 +10,6 @@
 namespace ModernizeWebForms2015._6 {
     
     
-    public partial class Default {
+    public partial class Default1 {
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Board Games Inventory" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ModernizeWebForms2015._7.Default1" MasterPageFile="~/7/7.Master" %>
+﻿<%@ Page Title="My Trip Agenda" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ModernizeWebForms2015._7.Default1" MasterPageFile="~/7/7.Master" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="bodyContent">
 
@@ -8,22 +8,27 @@
       <thead>
         <tr>
           <th><a href="#" data-ng-click="orderByField='Id'; orderByAsc=!orderByAsc;">ID</a></th>
-          <th><a href="#" data-ng-click="orderByField='Name'; orderByAsc=!orderByAsc;">Name</a></th>
-          <th><a href="#" data-ng-click="orderByField='PriceUSD'; orderByAsc=!orderByAsc;">Price USD</a></th>
-          <th><a href="#" data-ng-click="orderByField='InStock'; orderByAsc=!orderByAsc;">In Stock</a></th>
+          <th><a href="#" data-ng-click="orderByField='FromDateTime'; orderByAsc=!orderByAsc;">From</a></th>
+          <th><a href="#" data-ng-click="orderByField='ToDateTime'; orderByAsc=!orderByAsc;">To</a></th>
+          <th><a href="#" data-ng-click="orderByField='Destination'; orderByAsc=!orderByAsc;">Destination</a></th>
         </tr>
       </thead>
-      <tbody data-ng-repeat="game in games |orderBy:orderByField:orderByAsc">
+      <tbody data-ng-repeat="trip in trips |orderBy:orderByField:orderByAsc">
         <tr>
-          <td>{{game.Id}}</td>
-          <td>{{game.Name}}</td>
-          <td>{{game.PriceUSD}}</td>
-          <td>{{game.InStock}}</td>
+          <td>{{trip.ID}}</td>
+          <td>{{trip.FromDateTime| date:'mediumDate'}}</td>
+          <td>{{trip.ToDateTime| date:'mediumDate'}}</td>
+          <td>{{trip.Destination}}</td>
         </tr>
       </tbody>
     </table>
 
   </div>
+
+</asp:Content>
+
+<asp:Content runat="server" ContentPlaceHolderID="scriptsContent">
+
 
   <script type="text/javascript">
 
@@ -31,18 +36,18 @@
 
       var myController = function($scope, $http) {
 
-        $scope.orderByField = "Id";
+        $scope.orderByField = "ID";
         $scope.orderByAsc = false;
 
-        $http.get("/api/BoardGame")
+        $http.get("/api/Trip")
           .success(function(data) {
           console.log(data);
-            $scope.games = data;
+            $scope.trips = data;
           });
 
       };
 
-      angular.module("form2Spa").controller("myController", myController, ['$scope', '$http']);
+      angular.module("modernWebForms").controller("myController", myController, ['$scope', '$http']);
 
     })();
 

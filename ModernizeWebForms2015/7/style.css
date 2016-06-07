@@ -4,6 +4,10 @@
   overflow: hidden;
 }
 
+h2 {
+	margin-left: 4em;
+}
+
 form, footer {
   position: absolute;
   overflow: hidden;

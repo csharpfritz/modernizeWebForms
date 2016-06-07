@@ -12,8 +12,8 @@ namespace ModernizeWebForms2015.Migrations
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        DepartureDateTime = c.DateTime(nullable: false),
-                        ArrivalDateTime = c.DateTime(nullable: false),
+                        FromDateTime = c.DateTime(nullable: false),
+                        ToDateTime = c.DateTime(nullable: false),
                         Destination = c.String(),
                     })
                 .PrimaryKey(t => t.ID);

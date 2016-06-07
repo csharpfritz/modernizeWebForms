@@ -11,16 +11,16 @@
     <div>
     
       <asp:SqlDataSource runat="server" ID="myData" ConnectionString='<%$ ConnectionStrings:trips %>'
-        SelectCommand="SELECT ID, DepartureDateTime, ArrivalDateTime, Destination FROM Trips WHERE ([Id] = @Id)" 
+        SelectCommand="SELECT ID, FromDateTime, ToDateTime, Destination FROM Trips WHERE ([Id] = @Id)" 
 				DeleteCommand="DELETE FROM [Trips] WHERE [Id] = @Id" 
-				InsertCommand="INSERT INTO [Trips] ([DepartureDateTime], [ArrivalDateTime], [Destination]) VALUES (@DepartureDateTime, @ArrivalDateTime, @Destination)" 
-				UpdateCommand="UPDATE [Trips] SET [DepartureDateTime] = @DepartureDateTime, [ArrivalDateTime] = @ArrivalDateTime, [Destination] = @Destination WHERE [Id] = @Id">
+				InsertCommand="INSERT INTO [Trips] ([FromDateTime], [ToDateTime], [Destination]) VALUES (@FromDateTime, @ToDateTime, @Destination)" 
+				UpdateCommand="UPDATE [Trips] SET [FromDateTime] = @FromDateTime, [ToDateTime] = @ToDateTime, [Destination] = @Destination WHERE [Id] = @Id">
         <SelectParameters>
           <asp:QueryStringParameter QueryStringField="id" DefaultValue="0" Name="Id" Type="Int32"></asp:QueryStringParameter>
         </SelectParameters>
         <UpdateParameters>
-          <asp:Parameter Name="DepartureDateTime" Type="datetime"></asp:Parameter>
-          <asp:Parameter Name="ArrivalDateTime" Type="datetime"></asp:Parameter>
+          <asp:Parameter Name="FromDateTime" Type="datetime"></asp:Parameter>
+          <asp:Parameter Name="ToDateTime" Type="datetime"></asp:Parameter>
           <asp:Parameter Name="Destination" Type="string"></asp:Parameter>
           <asp:Parameter Name="Id" Type="Int32"></asp:Parameter>
         </UpdateParameters>
@@ -33,12 +33,12 @@
           <asp:Label runat="server" ID="id" Width="100" Text='<%#: Bind("Id") %>'></asp:Label>
           <br />
 
-          <asp:Label runat="server" Text="Departure:" Width="100"></asp:Label>
-          <asp:TextBox runat="server" ID="DepartureDateTime" Text='<%#: Bind("DepartureDateTime") %>'></asp:TextBox>
+          <asp:Label runat="server" Text="From:" Width="100"></asp:Label>
+          <asp:TextBox runat="server" ID="FromDateTime" Text='<%#: Bind("FromDateTime") %>'></asp:TextBox>
           <br />
 
-          <asp:Label runat="server" Text="Arrival:" Width="100"></asp:Label>
-          <asp:TextBox runat="server" ID="ArrivalDateTime" Text='<%#: Bind("ArrivalDateTime") %>'></asp:TextBox>
+          <asp:Label runat="server" Text="To:" Width="100"></asp:Label>
+          <asp:TextBox runat="server" ID="ToDateTime" Text='<%#: Bind("ToDateTime") %>'></asp:TextBox>
           <br />
 
           <asp:Label runat="server" Text="Destination:" Width="100"></asp:Label>

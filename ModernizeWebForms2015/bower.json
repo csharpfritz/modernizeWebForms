@@ -1,0 +1,11 @@
+{
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "3.3.6",
+    "angular": "1.5.5"
+  },
+  "resolutions": {
+    "angular": "1.5.5"
+  }
+}

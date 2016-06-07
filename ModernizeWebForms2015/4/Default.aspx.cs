@@ -17,15 +17,10 @@ namespace ModernizeWebForms2015._4
 
     }
 
-    public IQueryable<Models.Trip> Get()
-    {
-      return _Repo.Get();
-    }
+		protected void grid_CallingDataMethods(object sender, CallingDataMethodsEventArgs e)
+		{
+			e.DataMethodsObject = _Repo;
+		}
 
-    //protected void grid_CallingDataMethods(object sender, CallingDataMethodsEventArgs e)
-    //{
-    //  e.DataMethodsObject = _Repo;
-    //}
-
-  }
+	}
 }

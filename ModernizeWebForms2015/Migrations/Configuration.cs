@@ -29,13 +29,11 @@ namespace ModernizeWebForms2015.Migrations
 
 			context.Trips.AddOrUpdate(
 					t => t.ID,
-					new Models.Trip { DepartureDateTime = new DateTime(2016, 6, 6, 10, 0, 0), ArrivalDateTime = new DateTime(2016, 6, 6, 13, 0, 0), Destination = "Seattle" },
-					new Models.Trip { DepartureDateTime = new DateTime(2016, 6, 9, 22, 0, 0), ArrivalDateTime = new DateTime(2016, 6, 10, 6, 0, 0), Destination = "Philadelphia" },
-					new Models.Trip { DepartureDateTime = new DateTime(2016, 6, 14, 16, 0, 0), ArrivalDateTime = new DateTime(2016, 6, 14, 17, 30, 0), Destination = "Boston" },
-					new Models.Trip { DepartureDateTime = new DateTime(2016, 8, 12, 10, 0, 0), ArrivalDateTime = new DateTime(2016, 8, 12, 15, 0, 0), Destination = "Jacksonville" },
-					new Models.Trip { DepartureDateTime = new DateTime(2016, 8, 14, 20, 0, 0), ArrivalDateTime = new DateTime(2016, 8, 14, 22, 0, 0), Destination = "Philadelphia" },
-					new Models.Trip { DepartureDateTime = new DateTime(2016, 9, 24, 10, 0, 0), ArrivalDateTime = new DateTime(2016, 9, 24, 12, 0, 0), Destination = "Atlanta" },
-					new Models.Trip { DepartureDateTime = new DateTime(2016, 9, 27, 20, 0, 0), ArrivalDateTime = new DateTime(2016, 9, 27, 22, 0, 0), Destination = "Philadelphia" }
+					new Models.Trip { FromDateTime = new DateTime(2016, 6, 6, 10, 0, 0), ToDateTime = new DateTime(2016, 6, 9, 13, 0, 0), Destination = "Seattle" },
+					new Models.Trip { FromDateTime = new DateTime(2016, 6, 13, 16, 0, 0), ToDateTime = new DateTime(2016, 6, 14, 17, 30, 0), Destination = "Boston" },
+					new Models.Trip { FromDateTime = new DateTime(2016, 8, 12, 10, 0, 0), ToDateTime = new DateTime(2016, 8, 14, 15, 0, 0), Destination = "Jacksonville" },
+					new Models.Trip { FromDateTime = new DateTime(2016, 9, 24, 10, 0, 0), ToDateTime = new DateTime(2016, 9, 27, 12, 0, 0), Destination = "Atlanta" },
+					new Models.Trip { FromDateTime = new DateTime(2016, 10, 20, 20, 0, 0), ToDateTime = new DateTime(2016, 10, 23, 22, 0, 0), Destination = "Philadelphia" }
 
 				);
 

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -25,18 +27,17 @@ namespace ModernizeWebForms2015._2_Master
 		//     string sortByExpression
 		public IQueryable<Models.Trip> grid_GetData()
 		{
+
 			return _Repo.Get();
 		}
 
-		/**
-				public void grid_CallingDataMethods(object sender, CallingDataMethodsEventArgs e)
-				{
 
-					e.DataMethodsObject = _Repo;
-				
-				}
-
-		**/
+		/*
+		protected void grid_CallingDataMethods(object sender, CallingDataMethodsEventArgs e)
+		{
+			e.DataMethodsObject = _Repo;
+		}
+		*/
 
 	}
 }

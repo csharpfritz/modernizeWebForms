@@ -1,26 +1,59 @@
-﻿<%@ Page Title="My Travel Agenda" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ModernizeWebForms2015._6.Default" MasterPageFile="~/6/6.Master" %>
+﻿<%@ Page Title="My Trip Agenda" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ModernizeWebForms2015._6.Default1" MasterPageFile="~/6/6.Master" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="bodyContent">
 
-    <table id="grid" class="table table-striped">
+	 <asp:ScriptManager runat="server" EnablePageMethods="true"></asp:ScriptManager>
+
+  <div data-ng-controller="myController">
+
+    <table id="grid" class="table table-striped table-hover">
       <thead>
         <tr>
-          <th><a href="#" class="sortHeader" data-bind="click: function() { sort('Id')}">ID</a></th>
-          <th><a href="#" class="sortHeader" data-bind="click: function() { sort('Name')}">Name</a></th>
-          <th><a href="#" class="sortHeader" data-bind="click: function() { sort('PriceUSD')}">Price USD</a></th>
-          <th><a href="#" class="sortHeader" data-bind="click: function() { sort('InStock')}">In Stock</a></th>
+          <th><a href="#" data-ng-click="orderByField='Id'; orderByAsc=!orderByAsc;">ID</a></th>
+          <th><a href="#" data-ng-click="orderByField='FromDateTime'; orderByAsc=!orderByAsc;">From</a></th>
+          <th><a href="#" data-ng-click="orderByField='ToDateTime'; orderByAsc=!orderByAsc;">To</a></th>
+          <th><a href="#" data-ng-click="orderByField='Destination'; orderByAsc=!orderByAsc;">Destination</a></th>
         </tr>
       </thead>
-      <tbody data-bind="foreach: games">
+      <tbody data-ng-repeat="trip in trips |orderBy:orderByField:orderByAsc">
         <tr>
-          <td data-bind="text: Id"></td>
-          <td data-bind="text: Name"></td>
-          <td data-bind="text: PriceUSD"></td>
-          <td data-bind="text: InStock"></td>
+          <td>{{trip.ID}}</td>
+          <td>{{trip.FromDateTime| date:'mediumDate'}}</td>
+          <td>{{trip.ToDateTime| date:'mediumDate'}}</td>
+          <td>{{trip.Destination}}</td>
         </tr>
       </tbody>
     </table>
 
-  <script src="app.js" type="text/javascript"></script>
+  </div>
+
+</asp:Content>
+
+<asp:Content runat="server" ContentPlaceHolderID="scriptsContent">
+
+  <script type="text/javascript">
+
+    (function() {
+
+      var myController = function($scope, $http) {
+
+        $scope.orderByField = "ID";
+        $scope.orderByAsc = false;
+
+
+        PageMethods.grid_GetData(function (result, context) {
+        	console.log(result);
+        	$scope.trips = result;
+        	$scope.$apply();
+        });
+
+      };
+
+      angular.module("modernWebForms").controller("myController", myController, ['$scope']);
+
+    })();
+
+  </script>
+
 
 </asp:Content>

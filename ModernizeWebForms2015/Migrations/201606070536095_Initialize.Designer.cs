@@ -13,7 +13,7 @@ namespace ModernizeWebForms2015.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201606051940043_Initialize"; }
+            get { return "201606070536095_Initialize"; }
         }
         
         string IMigrationMetadata.Source

@@ -10,7 +10,7 @@
 namespace ModernizeWebForms2015._7 {
     
     
-    public partial class _71 {
+    public partial class _7 {
         
         /// <summary>
         /// form1 control.
@@ -29,5 +29,14 @@ namespace ModernizeWebForms2015._7 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder bodyContent;
+        
+        /// <summary>
+        /// scriptsContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder scriptsContent;
     }
 }

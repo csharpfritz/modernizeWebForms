@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="7.master.cs" Inherits="ModernizeWebForms2015._7._71" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="7.Master.cs" Inherits="ModernizeWebForms2015._7._7" %>
 
 <!DOCTYPE html>
 
@@ -6,23 +6,20 @@
 <head runat="server">
   <title></title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-  <link href="style.css" rel="stylesheet" />
-  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />  
 
   <script type="text/javascript">
 
     (function () {
-      angular.module("form2Spa", []);
+    	angular.module("modernWebForms", []);
     })();
 
   </script>
 
 </head>
 <body>
-  <form id="form1" runat="server" data-ng-app="form2Spa">
+  <form id="form1" runat="server" data-ng-app="modernWebForms">
 
     <div class="jumbotron">
       <h2><%: Page.Title %></h2>
@@ -34,6 +31,20 @@
   </form>
 
   <footer>&copy;2016 Jeff Fritz Travel Inc.</footer>
+
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript">
+
+    (function () {
+    	angular.module("modernWebForms", []);
+    })();
+
+  </script>
+
+	<asp:ContentPlaceHolder ID="scriptsContent" runat="server"></asp:ContentPlaceHolder>
 
 </body>
 </html>

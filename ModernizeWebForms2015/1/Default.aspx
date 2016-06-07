@@ -15,18 +15,19 @@
 
       </asp:Label>
 
+			<br />
+			<br />
+
 			<asp:SqlDataSource ID="data" runat="server"
 				ConnectionString="<%$ ConnectionStrings:trips %>"
-				SelectCommand="SELECT ID, DepartureDateTime, ArrivalDateTime, Destination FROM Trips">
+				SelectCommand="SELECT ID, FromDateTime, ToDateTime, Destination FROM Trips">
       </asp:SqlDataSource>
 
-      <a href="Add.aspx">Add New</a>
-
-      <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="data">
+      <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="data" CellPadding="4">
         <Columns>
           <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
-          <asp:BoundField DataField="DepartureDateTime" HeaderText="Departure" SortExpression="DepartureDateTime" />
-          <asp:BoundField DataField="ArrivalDateTime" HeaderText="ArrivalDateTime" SortExpression="ArrivalDateTime" />
+          <asp:BoundField DataField="FromDateTime" DataFormatString="{0:MMM d, yyyy}" HeaderText="From" SortExpression="FromDateTime" />
+          <asp:BoundField DataField="ToDateTime" DataFormatString="{0:MMM d, yyyy}" HeaderText="To" SortExpression="ToDateTime" />
           <asp:BoundField DataField="Destination" HeaderText="Destination" SortExpression="Destination" />
           <asp:HyperLinkField DataNavigateUrlFields="Id" DataNavigateUrlFormatString="Edit.aspx?id={0}" Text="Edit" />
         </Columns>
